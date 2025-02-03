@@ -13,3 +13,6 @@ Terraform data object is invoking python based on system it runs on - for local 
 environment's commands
 
 Python also requires a few modules, see requirements.txt
+
+<h2> Usage </h2>
+Clone this, run terraform init and then terraform plan. An output of the calculated CIDRs will be returned. 
