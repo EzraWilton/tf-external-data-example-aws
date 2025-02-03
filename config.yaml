@@ -1,0 +1,55 @@
+General:
+  Application: vpc-baseline
+  Region: us-west-2
+  RegionShortID: usw2
+  VpcRequired: true
+
+NetworkDefinition:
+  RouteTables:
+    Beta:
+      Routes:
+        ArmViaNat:
+          DestinationCidrBlock: "0.0.0.0/0"
+          Target: NAT
+          Target-ID: Beta
+
+  Targets:
+    NATs:
+      Beta:
+        Type: Private
+        Subnet: Beta
+
+  Networks:
+    10.0.0.0/23:
+      Subnets:
+        Alpha:
+          Mask: 25
+          AZ: az1
+          CidrOverride: ""
+          RouteTable: Main
+        Beta:
+          Mask: 25
+          AZ: az1
+          CidrOverride: ""
+          RouteTable: Main
+        Beta-2:
+          Mask: 26
+          AZ: az2
+          CidrOverride: ""
+          RouteTable: Main
+        TGWA:
+          Mask: 28
+          AZ: az1
+          CidrOverride: ""
+          RouteTable: Main
+        TGWA-1:
+          Mask: 28
+          AZ: az2
+          CidrOverride: ""
+          RouteTable: Main
+        TGWA-2:
+          Mask: 28
+          AZ: az2
+          CidrOverride: ""
+          RouteTable: Main
+
