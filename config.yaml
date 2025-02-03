@@ -47,9 +47,4 @@ NetworkDefinition:
           AZ: az2
           CidrOverride: ""
           RouteTable: Main
-        TGWA-2:
-          Mask: 28
-          AZ: az2
-          CidrOverride: ""
-          RouteTable: Main
 
